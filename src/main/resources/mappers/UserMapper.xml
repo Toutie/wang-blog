@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etoak.web.dao.UserDao">
+
+    <insert id="addUser" parameterType="com.etoak.web.bean.vo.UserBeanVo">
+      insert into tb_user
+      VALUES (null,#{userName},#{password},#{email},#{isEnable},#{createTime},#{updateTime})
+
+    </insert>
+    <update id="updateUser" parameterType="com.etoak.web.bean.vo.UserBeanVo">
+        UPDATE tb_user
+        <set>
+            <if test="id!=null and id !=''">
+                id=#{id}
+            </if>
+            <if test="userName!=null and userName!=''">
+                username = #{userName}
+            </if>
+            <if test="email !=null and email != ''">
+                email=#{email}
+            </if>
+
+            <if test="updateTime!=null and updateTime!=''">
+                update_tiem = #{updateTime}
+            </if>
+        </set>
+    </update>
+    <select id="queryUserList" resultType="com.etoak.web.bean.vo.UserBeanVo">
+        select * from tb_user
+        <where>
+            <if test="userName!=null and userName!=''">
+                username= #{userName}
+            </if>
+            <if test="password!=null and password!=''">
+                and password=#{password}
+            </if>
+
+        </where>
+        ORDER BY create_time DESC
+    </select>
+</mapper>

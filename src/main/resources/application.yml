@@ -1,0 +1,39 @@
+
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+
+spring:
+  datasource:
+    username: root
+    password: 3428238749
+    url: jdbc:mysql://localhost/blog?characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
+
+logging:
+  level:
+    com.etoak.web.dao: debug
+
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml
+
+
+
+
+# 配置分页插件pagehelper
+
+
+
+
+
+

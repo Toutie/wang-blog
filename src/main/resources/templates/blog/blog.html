@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head"></head>
+
+<body>
+<div class="layui-layout layui-layout-admin">
+<!--头部导航-->
+    <div class="layui-header">
+        <div class="layui-logo">文章管理</div>
+        <div th:replace="common/header"></div>
+
+    </div>
+    <!--侧边栏-->
+    <div th:replace="common/side"></div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">内容主体区域
+
+            <table class="layui-hide" id="test"></table>
+
+            <script type="text/html" id="barDemo">
+                <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+            </script>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+
+    layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+        var laydate = layui.laydate //日期
+            ,laypage = layui.laypage //分页
+            ,layer = layui.layer //弹层
+            ,table = layui.table //表格
+            ,carousel = layui.carousel //轮播
+            ,upload = layui.upload //上传
+            ,element = layui.element //元素操作
+            ,slider = layui.slider //滑块
+
+
+
+        table.render({
+            elem: '#test'
+            ,url:'/queryUser/'
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,page: true //开启分页
+            ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            ,cols: [
+        [
+                {field:'id', width:80, title: 'ID', sort: true}
+                ,{field:'userName', width:80, title: '用户名'}
+                // ,{field:'sex', width:80, title: '性别', sort: true}
+                // ,{field:'city', width:80, title: '城市'}
+                // ,{field:'sign', title: '签名', width: '30%', minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                // ,{field:'experience', title: '积分', sort: true}
+                // ,{field:'score', title: '评分', sort: true}
+                // ,{field:'classify', title: '职业'}
+                // ,{field:'wealth', width:137, title: '财富', sort: true}
+            ]
+
+            ]
+            ,response: {
+                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+            }
+
+        });
+
+
+
+    });
+</script>
+</html>

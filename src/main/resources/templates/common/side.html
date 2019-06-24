@@ -1,0 +1,45 @@
+<body class="layui-layout-body">
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">控制台</a>
+                    <dl class="layui-nav-child">
+                        <dd><a th:href="@{/blogPage}">博文管理</a></dd>
+                        <dd><a href="javascript:;">用户管理</a></dd>
+                        <dd><a href="javascript:;">日志管理</a></dd>
+                        <dd><a href="">浏览管理</a></dd>
+
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">其他</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">评论管理</a></dd>
+                        <dd><a href="javascript:;">标签管理</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">预留</a></li>
+                <li class="layui-nav-item"><a href="">预留</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--<div class="layui-body">
+        &lt;!&ndash; 内容主体区域 &ndash;&gt;
+        <div style="padding: 15px;">内容主体区域
+
+            &lt;!&ndash;<iframe src="/blogPage" width="1000px" height= "65px" name="topFrame"&ndash;&gt;
+                    &lt;!&ndash;scrolling="No"  noresize="noresize" frameborder="0" id="topFrame"></iframe>&ndash;&gt;
+
+        </div>
+    </div>-->
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        wang's-blog 小后台
+    </div>
+
+</body>
+

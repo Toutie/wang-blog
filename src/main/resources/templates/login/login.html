@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link th:href="@{/layui/css/layui.css}" rel="stylesheet"/>
+    <style>
+        .layui-input-block {
+            width: 35%;
+        }
+
+        #username {
+            padding: 10px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+<h2>
+
+</h2>
+<form class="layui-form" action="/user/login" method="post">
+    <!--账号-->
+    <div class="layui-form-item" id="username">
+        <label class="layui-form-label">账号：</label>
+        <div class="layui-input-block">
+
+            <input type="text" required class="layui-input" id="user-name" name="userName" placeholder="请输入账号"
+                   autocomplete="off">
+            <div class="layui-form-mid layui-word-aux">暂未开放登录注册，仅限管理员登录</div>
+        </div>
+
+    </div>
+
+    <!--密码-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码：</label>
+        <div class="layui-input-block">
+            <input type="password" required class="layui-input" id="user-password"
+                   name="password" placeholder="请输入密码" autocomplete="off">
+            <div class="layui-form-mid layui-word-aux">暂未开放登录注册，仅限管理员登录</div>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+
+</script>
+</body>
+</html>

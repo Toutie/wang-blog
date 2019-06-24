@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etoak.web.dao.CommentDao">
+
+    <insert id="addComment">
+
+    </insert>
+
+    <update id="updateComment"></update>
+
+    <delete id="deleteComment"></delete>
+
+    <select id="queryComment" resultType="com.etoak.web.bean.CommentBean">
+
+    </select>
+</mapper>
